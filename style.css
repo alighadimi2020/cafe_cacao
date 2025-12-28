@@ -1,0 +1,147 @@
+:root {
+    --main-pink: #ff85a1;
+    --dark-pink: #f72585;
+    --light-pink: #ffe5ec;
+    --classic-font: 'Lalezar', cursive;
+}
+
+body {
+    margin: 0;
+    background-color: #fffafb;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+}
+
+/* هدر حرفه‌ای */
+.hero-banner {
+    background: linear-gradient(rgba(255,133,161,0.6), rgba(255,133,161,0.6)), 
+                url('https://images.unsplash.com/photo-1559925393-8be0ec418cd9?auto=format&fit=crop&w=500');
+    background-size: cover;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 50px 50px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px 40px;
+    border-radius: 25px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.main-title {
+    font-family: var(--classic-font);
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.status-badge {
+    background: #4caf50;
+    color: white;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* گرید منو */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    margin-top: -30px; /* برای آمدن روی هدر */
+}
+
+.grid-item {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.grid-item .icon-circle {
+    background: var(--light-pink);
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    font-size: 1.5rem;
+    color: var(--dark-pink);
+}
+
+.grid-item span {
+    font-family: var(--classic-font);
+    color: #444;
+}
+
+/* استایل صفحات داخلی */
+.menu-page {
+    padding: 20px;
+    display: none; /* در حالت عادی مخفی است - برای نمایش باید آیدی فراخوانی شود */
+}
+
+.menu-page:target {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: white;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.product-card {
+    display: flex;
+    background: var(--light-pink);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-info h3 {
+    font-family: var(--classic-font);
+    margin: 0;
+    color: var(--dark-pink);
+}
+
+.hot-icon { color: #ff4d6d; font-size: 0.9rem; }
+.vegan-icon { color: #4caf50; font-size: 0.9rem; }
+.img-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* ایجاد یک هاله صورتی نرم پشت عکس */
+    filter: drop-shadow(0 8px 10px rgba(255, 77, 109, 0.2)); 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* جلوگیری از دفرمه شدن عکس */
+}
+
+.grid-item:hover .img-wrapper {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.grid-item span {
+    font-family: 'Lalezar', cursive;
+    color: #590d22;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
